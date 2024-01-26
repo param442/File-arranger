@@ -6,7 +6,8 @@ async function readFilesInDirectory(directoryPath) {
     const files = await fs.readdir(directoryPath);
 
     for (const file of files) {
-      const ext = path.extname(file);
+      const extWithDot = path.extname(file);
+      const ext = extWithDot.slice(1);
       const folderPath = path.join(directoryPath, ext);
 
       try {
@@ -34,4 +35,4 @@ async function readFilesInDirectory(directoryPath) {
 }
 
 // Example: Read files from the current directory
-readFilesInDirectory("C:\\Users\\PARAM VIR SINGH\\Downloads");
+readFilesInDirectory("D:\\sonia");
